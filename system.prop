@@ -48,7 +48,6 @@ persist.rmnet.data.enable=true
 vendor.hw.fm.init=0
 
 # Graphics
-debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 
 # IMS
