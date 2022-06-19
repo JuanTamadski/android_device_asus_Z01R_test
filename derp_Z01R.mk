@@ -24,7 +24,10 @@ $(call inherit-product, device/asus/Z01R/device.mk)
 
 # Inherit some common DerpFest stuff.
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
+
 DERP_BUILDTYPE := Official
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_USES_BLUR := true
 
 PRODUCT_BRAND := asus
 PRODUCT_DEVICE := Z01R
