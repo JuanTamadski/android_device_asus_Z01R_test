@@ -57,13 +57,12 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/asus/sdm845
 TARGET_KERNEL_CONFIG := Z01R_defconfig
-TARGET_KERNEL_CLANG_COMPILE := false
-TARGET_KERNEL_CLANG_VERSION := proton
-TARGET_KERNEL_OPTIONAL_LD  := true
-TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM_IAS=1 LLVM=1 LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip
-TARGET_KERNEL_ADDITIONAL_FLAGS += OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTAR=llvm-ar >
-TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    LLVM=1 \
+    LLVM_IAS=1
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm845
